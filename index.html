@@ -1,9 +1,9 @@
 <!DOCTYPE html> <html lang="en">     <head>         <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Omnifood is a premium food delivery service
-with the mission to bring affordable and healty meals to as many people as
-possible.">
-        
+
+		<link href='https://fonts.googleapis.com/css?family=Alfa Slab One' rel='stylesheet'>
+		<link href='https://fonts.googleapis.com/css?family=Autour One' rel='stylesheet'>
+
         <link rel="stylesheet" type="text/css" href="vendors/css/normalize.css">
         <link rel="stylesheet" type="text/css" href="vendors/css/grid.css">
         <link rel="stylesheet" type="text/css" href="vendors/css/ionicons.min.css">
@@ -37,6 +37,7 @@ possible.">
         	#video_box
         	{
         		position: relative;
+        		height: auto;
         	}
         	#logo-overlays
         	{
@@ -51,11 +52,38 @@ possible.">
         	}
         	.OUTWITHTHEOLD
         	{
+				font-family: 'Alfa Slab One';
+        	}
+        	#MORESHOPPINGTOOLS
+        	{
+        		font-size: 30px;
+
+        	}
+        	.second-text-box
+        	{
+				position: absolute;
+			    left: 70%;
+			    -webkit-transform: translate(-50%, -50%);
+			    -ms-transform: translate(-50%, -50%);
+			    transform: translate(-50%, -50%);
+			    margin-bottom: 0;
+			    padding-top: 45%;
+			    padding-left: 0%;
+			    z-index: 3;
+			    width: 50%;
+			    text-align: right;
+        	}
+        	.CHECKOUTSIZE
+        	{
+
         		font-family: sans-serif;
+
         	}
         	.CHILDFASHION
         	{
-        		font-family: Arial;
+        		padding-left: 10%;
+        		margin-bottom: 3%;
+				font-family: 'Autour One';
         		color: white;
         	}
         	.Start-button
@@ -84,6 +112,10 @@ possible.">
 			{
 				margin-left: 60px;
 				margin-top: 20px;
+			}
+			#Size-button
+			{
+				margin-top: -10%;
 			}
 			#myVideoContainer
 			{
@@ -130,6 +162,7 @@ possible.">
 			}				
 			.search-box {
 			  width:100%;
+			  height: auto;
 			  background-color:#fff;
 			  border:1px solid #cfcfcf;
 			  position:relative;
@@ -173,8 +206,89 @@ possible.">
 			  margin-right: auto;
 			  margin-left: auto;
 			  width:70%;
+			  font-weight: bold;
+			}
+			.imgContainer {
+			  padding-right: 15px;
+			  padding-left: 15px;
+			  margin-right: auto;
+			  margin-left: auto;
+			  width:100%;
+			  font-weight: bold;
+			}
+			.SIZEBUTTON
+			{
+				position: absolute;
+				margin-top: 20%;
+			}
+			.form-group 
+			{
+  				margin-bottom: 1rem;
+			}
+
+			.form-control {
+			  display: block;
+			  width: 100%;
+			  padding: 0.375rem 0.75rem;
+			  font-size: 1rem;
+			  line-height: 1.5;
+			  color: #495057;
+			  background-color: #fff;
+			  background-clip: padding-box;
+			  border: 1px solid #ced4da;
+			  border-radius: 0.25rem;
+			  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+			}
+
+						
+			.form-check {
+			  position: relative;
+			  display: block;
+			  padding-left: 1.25rem;
+			}
+
+			.form-check-input {
+			  position: absolute;
+			  margin-top: 0.3rem;
+			  margin-left: -1.25rem;
+			}
+			
+			.form-check-input:disabled ~ .form-check-label {
+			  color: #6c757d;
+			}
+
+			.form-check-label {
+			  margin-bottom: 0;
+			}
+
+			.form-check-inline {
+			  display: -webkit-inline-box;
+			  display: -ms-inline-flexbox;
+			  display: inline-flex;
+			  -webkit-box-align: center;
+			  -ms-flex-align: center;
+			  align-items: center;
+			  padding-left: 0;
+			  margin-right: 0.75rem;
+			}
+
+			.form-check-inline .form-check-input {
+			  position: static;
+			  margin-top: 0;
+			  margin-right: 0.3125rem;
+			  margin-left: 0;
+			}
+			input[type=checkbox]
+			{
+			  /* Double-sized Checkboxes */
+			  -ms-transform: scale(2); /* IE */
+			  -moz-transform: scale(2); /* FF */
+			  -webkit-transform: scale(2); /* Safari and Chrome */
+			  -o-transform: scale(2); /* Opera */
+			  padding: 10px;
 			}
 			</style>
+
     </head>
     <body>
     	<header>
@@ -201,7 +315,7 @@ possible.">
     			<!-- The Video -->
     			<div id="myVideoContainer">
     				<div id="overlay"></div>
-    				<video autoplay id="myVideo">
+    				<video autoplay loop id="myVideo">
     					<source src="./resources/videos/start_video.mov">
     				</video>
     			</div>
@@ -212,21 +326,114 @@ possible.">
             <div class="row">
                 <h2 id="searchNow">SEARCH NOW</h2>
             </div>
-            <div class="container" align="center">
         		<form method="get" name="search" class="search">
+	        		<input type="hidden" name="Organic" id="Organic" value="False">
+	  				<input type="hidden" name="USA" id="USA" value="False">
+	  				<input type="hidden" name="PriceLevel" id="PriceLevel" value="0">  
+					<input type="hidden" name="RatingLevel" id="RatingLevel" value="0">
+
+					<input type="hidden" name="Jazz" id="Jazz" value="0">
+					<input type="hidden" name="Pop" id="Pop" value="0">
+					<input type="hidden" name="Techno" id="Techno" value="0">
+					<input type="hidden" name="Indie" id="Indie" value="0">
+					<input type="hidden" name="HipHop" id="HipHop" value="0">
+					<input type="hidden" name="Lullaby" id="Lullaby" value="0">
+					<input type="hidden" name="Jock Jams" id="Jock Jams" value="0">
+
+        			<div class="container" align="center">
             		<div class=border>
             			<button type="button" class="btn btn-info">Search By</button>
             			<input class="search-box" name="seach" type="text" />
         			</div>
-        		</form>
+        			<div class="container">
+					  <div class="row">
+					  <div class="col">
+					    <label for="exampleFormControlSelect1">Gender</label>
+					    <select>
+					      <option>Boy</option>
+					      <option>Girl</option>
+					      <option>Both</option>
+					    </select>
+					  </div>
+					  <div class="col">
+					    <label for="exampleFormControlSelect1">Age Range</label>
+					    <select>
+					      <option>0-3 month</option>
+					      <option>3-6 month</option>
+					      <option>6-12 month</option>
+					      <option>12-18 month</option>
+					      <option>18-24 month</option>
+					      <option>2-3 year</option>
+					      <option>4-5 year</option>
+					      <option>6-7 year</option>
+					      <option>8-9 year</option>
+					      <option>10-12 year</option>
+					    </select>
+					  </div>
+					  <div class="col">
+					  	<br>
+					    <input type="button" id="OrganicButton" value = "Organic" style="background-color: #e7e7e7; color: #008000" onclick="setColorNormal('OrganicButton','Organic',0)";/>
+					  </div>
+					  <div class="col">
+					  	<br>
+					    <input type="button" id="USAButton" value = "Made in USA" style="background-color: #e7e7e7; color: #008000" onclick="setColorNormal('USAButton','USA',1)";/>
+					  </div>
+					</div>
+					<div class="row">
+						<div class="col">
+							<label for="exampleFormControlSelect1">Price</label>
+							<br>
+							<input type="button" id="PriceLevel1" value = "$" style="background-color: #e7e7e7; color: #008000" onclick="setColorPrice('PriceLevel1',1)";/>
+							<input type="button" id="PriceLevel2" value = "$$" style="background-color: #e7e7e7; color: #008000" onclick="setColorPrice('PriceLevel2',2)";/>
+							<input type="button" id="PriceLevel3" value = "$$$" style="background-color: #e7e7e7; color: #008000" onclick="setColorPrice('PriceLevel3',3)";/>
+							<input type="button" id="PriceLevel4" value = "$$$$" style="background-color: #e7e7e7; color: #008000" onclick="setColorPrice('PriceLevel4',4)";/>
+							<input type="button" id="PriceLevel5" value = "$$$$$" style="background-color: #e7e7e7; color: #008000" onclick="setColorPrice('PriceLevel5',5)";/>
+						</div>
+						<div class="col">
+							<label>Rating</label>
+							 <br>
+							<input type="button" id="RatingLevel1" value = "&#9733" style="background-color: #e7e7e7; color: #008000" onclick="setColorRating('PriceLevel1',1)";/>
+							<input type="button" id="RatingLevel2" value = "&#9733 &#9733" style="background-color: #e7e7e7; color: #008000" onclick="setColorRating('PriceLevel2',2)";/>
+							<input type="button" id="RatingLevel3" value = "&#9733 &#9733 &#9733" style="background-color: #e7e7e7; color: #008000" onclick="setColorRating('PriceLevel3',3)";/>
+							<input type="button" id="RatingLevel4" value = "&#9733 &#9733 &#9733 &#9733" style="background-color: #e7e7e7; color: #008000" onclick="setColorRating('PriceLevel4',4)";/>
+							<input type="button" id="RatingLevel5" value = "&#9733 &#9733 &#9733 &#9733 &#9733" style="background-color: #e7e7e7; color: #008000" onclick="setColorRating('PriceLevel5',5)";/>
+						</div>
+						<div class="col">
+							<label for="exampleFormControlSelect1">Genres</label>
+							<br>
+					    	<input type="button" id="JazzButton" value = "Jazz" style="background-color: #e7e7e7; color: #008000" onclick="setColorNormal('JazzButton','Jazz',2)";/>
+					    	<br>
+					    	<input type="button" id="PopButton" value = "Pop" style="background-color: #e7e7e7; color: #008000" onclick="setColorNormal('PopButton','Pop',3)";/>
+					    	<br>
+					    	<input type="button" id="TechnoButton" value = "Techno" style="background-color: #e7e7e7; color: #008000" onclick="setColorNormal('TechnoButton','Techno',4)";/>
+					    	<br>
+					    	<input type="button" id="IndieButton" value = "Indie" style="background-color: #e7e7e7; color: #008000" onclick="setColorNormal('IndieButton','Indie',5)";/>
+					    	<br>
+					    	<input type="button" id="HipHopButton" value = "Hip Hop" style="background-color: #e7e7e7; color: #008000" onclick="setColorNormal('HipHopButton','Hiphop',6)";/>
+					    	<br>
+					    	<input type="button" id="LullabyButton" value = "Lullaby" style="background-color: #e7e7e7; color: #008000" onclick="setColorNormal('LullabyButton','Lullaby',7)";/>
+					    	<br>
+					    	<input type="button" id="JockJamsButton" value = "Jock Jams" style="background-color: #e7e7e7; color: #008000" onclick="setColorNormal('JockJamsButton','Jock',8)";/>
+					    </div>
+					    <div class="col">
+						<input type="radio" name="Special" value="Accessory">Accessory Only<br>
+						<input type="radio" name="Special" value="Outwear">Outwear Only<br>
+						<input type="radio" name="Special" value="Swimwear">swimwear Only<br>
+						<input type="radio" name="Special" value="Formal">Formalwear Only<br>
+						<input type="radio" name="Special" value="None">None<br>
+
+					</div>
+					</div>
         	</div>
+
+        		</form>
         </section>
         
         <section class="section-meals">
             <div class="row">
             	<h2 id="browseSuggestedCollections">BROWSE SUGGESTED COLLECTIONS</h2>
             </div>
-            <div class="container">
+            <div class="imgContainer">
         	<div class="row" id="subtitles">ECO-FRIENDLY</div>
             <ul class="meals-showcase clearfix">
                 <li>
@@ -251,7 +458,7 @@ possible.">
                 </li>
             </ul>
             </div>
-            <div class="container">
+            <div class="imgContainer">
         	<div class="row" id="subtitles">MADE IN THE USA</div>
             <ul class="meals-showcase clearfix">
                 <li>
@@ -276,9 +483,9 @@ possible.">
                 </li>
             </ul>
             </div>
-            <div class="container">
+            <div class="imgContainer">
         	<div class="row" id="subtitles">MOST POPULAR</div>
-            <ul class="meals-showcase clearfix">
+			<ul class="meals-showcase clearfix">
                 <li>
                     <figure class="meal-photo">
                         <img src="./Creative Department/Deck Files/Milk Shirt.png" alt="Korean bibimbap with egg and vegetables">
@@ -304,246 +511,38 @@ possible.">
         </section>
         
         
-        <section class="section-size" id="works">
-        	<!-- <div class="size-text-box">
-        		<p><h3 class="CHILDFASHION">FOR MORE SHOPPING TOOLS</h3></p>
-        		<p><h2 class=""></p>
-        	</div> -->
-        </section>
+        <header>
+			<!-- The logo -->
+			<div id="video_box">
+				<div id="video-background-filter"></div>
+    				<div id="content-overlays">
+	    				<div class="second-text-box">
+	    					<h4 class="CHILDFASHION" id="MORESHOPPINGTOOLS">FOR MORE SHOPPING TOOLS</h4>
+	                		<h1 class="OUTWITHTHEOLD">CHECK OUT<br>THE SIZE CONVERTER</h1>
+
+	                	<div class="SIZEBUTTON">
+	                		<button type="button" class="Start-button" id="Size-button">
+	                			<a href="#searchBar">
+	                			SIZE CONVERTOR
+	                			</a>
+	                		</button>
+	            		</div>
+	                	</div>	
+	                			 
+    				</div>
+		    		
+            	</div>
+    			<!-- The Video -->
+    			<div id="myVideoContainer">
+    				<div id="overlay"></div>
+    				<video autoplay loop id="myVideo">
+    					<source src="./resources/videos/sizeConvertor_video.mov" loop>
+    				</video>
+    			</div>
+    		</div>
+    	</header>
         
-        <section class="section-cities" id="cities">
-            <div class="row">
-                <h2>We're currently in these cities</h2>
-            </div>
-            <div class="row js--wp-3">
-                <div class="col span-1-of-4 box">
-                    <img src="resources/img/lisbon-3.jpg" alt="Lisbon">
-                    <h3>Lisbon</h3>
-                    <div class="city-feature">
-                        <i class="ion-ios-person icon-small"></i>
-                        1600+ happy eaters
-                    </div>
-                    <div class="city-feature">
-                        <i class="ion-ios-star icon-small"></i>
-                        60+ top chefs
-                    </div>
-                    <div class="city-feature">
-                        <i class="ion-social-twitter icon-small"></i>
-                        <a href="#">@omnifood_lx</a>
-                    </div>
-                </div>
-                <div class="col span-1-of-4 box">
-                    <img src="resources/img/san-francisco.jpg" alt="San Francisco">
-                    <h3>San Francisco</h3>
-                    <div class="city-feature">
-                        <i class="ion-ios-person icon-small"></i>
-                        3700+ happy eaters
-                    </div>
-                    <div class="city-feature">
-                        <i class="ion-ios-star icon-small"></i>
-                        160+ top chefs
-                    </div>
-                    <div class="city-feature">
-                        <i class="ion-social-twitter icon-small"></i>
-                        <a href="#">@omnifood_sf</a>
-                    </div>
-                </div>
-                <div class="col span-1-of-4 box">
-                    <img src="resources/img/berlin.jpg" alt="Berlin">
-                    <h3>Berlin</h3>
-                    <div class="city-feature">
-                        <i class="ion-ios-person icon-small"></i>
-                        2300+ happy eaters
-                    </div>
-                    <div class="city-feature">
-                        <i class="ion-ios-star icon-small"></i>
-                        110+ top chefs
-                    </div>
-                    <div class="city-feature">
-                        <i class="ion-social-twitter icon-small"></i>
-                        <a href="#">@omnifood_berlin</a>
-                    </div>
-                </div>
-                <div class="col span-1-of-4 box">
-                    <img src="resources/img/london.jpg" alt="London">
-                    <h3>London</h3>
-                    <div class="city-feature">
-                        <i class="ion-ios-person icon-small"></i>
-                        1200+ happy eaters
-                    </div>
-                    <div class="city-feature">
-                        <i class="ion-ios-star icon-small"></i>
-                        50+ top chefs
-                    </div>
-                    <div class="city-feature">
-                        <i class="ion-social-twitter icon-small"></i>
-                        <a href="#">@omnifood_london</a>
-                    </div>
-                </div>
-            </div>
-            
-        </section>
-        
-        <section class="section-testimonials">
-            <div class="row">
-                <h2>Our customers can't live without us</h2>
-            </div>
-            <div class="row">
-                <div class="col span-1-of-3">
-                    <blockquote>
-                        Omnifood is just awesome! I just launched a startup which leaves me with no time for cooking, so Omnifood is a life-saver. Now that I got used to it, I couldn't live without my daily meals!
-                        <cite><img src="resources/img/customer-1.jpg" alt="Customer 1 photo">Alberto Duncan</cite>
-                    </blockquote>
-                </div>
-                <div class="col span-1-of-3">
-                    <blockquote>
-                       Inexpensive, healthy and great-tasting meals, delivered right to my home. We have lots of food delivery here in Lisbon, but no one comes even close to Omifood. Me and my family are so in love!
-                        <cite><img src="resources/img/customer-2.jpg" alt="Customer 2 photo">Joana Silva</cite>
-                    </blockquote>
-                </div>
-                <div class="col span-1-of-3">
-                    <blockquote>
-I was looking for a quick and easy food delivery service in San Franciso. I tried a lot of them and ended up with Omnifood. Best food delivery service in the Bay Area. Keep up the great work!
-                    <cite><img src="resources/img/customer-3.jpg" alt="Customer 3 photo">Milton Chapman</cite>
-                    </blockquote>
-                </div>
-            </div>
-        </section>
-        
-        
-        <section class="section-plans js--section-plans" id="plans">
-            <div class="row">
-                <h2>Start eating healthy today</h2>
-            </div>
-            <div class="row">
-                <div class="col span-1-of-3">
-                    <div class="plan-box js--wp-4">
-                        <div>
-                            <h3>Premium</h3>
-                            <p class="plan-price">$399 <span>/ month</span></p>
-                            <p class="plan-price-meal">That's only 13.30$ per meal</p>
-                        </div>
-                        <div>
-                            <ul>
-                                <li><i class="ion-ios-checkmark-empty icon-small"></i>1 meal every day</li>
-                                <li><i class="ion-ios-checkmark-empty icon-small"></i>Order 24/7</li>
-                                <li><i class="ion-ios-checkmark-empty icon-small"></i>Access to newest creations</li>
-                                <li><i class="ion-ios-checkmark-empty icon-small"></i>Free delivery</li>
-                            </ul>
-                        </div>
-                        <div>
-                            <a href="#" class="btn btn-full">Sign up now</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col span-1-of-3">
-                    <div class="plan-box">
-                        <div>
-                            <h3>Pro</h3>
-                            <p class="plan-price">$149 <span>/ month</span></p>
-                            <p class="plan-price-meal">That's only 14.90$ per meal</p>
-                        </div>
-                        <div>
-                            <ul>
-                                <li><i class="ion-ios-checkmark-empty icon-small"></i>1 meal 10 days/month</li>
-                                <li><i class="ion-ios-checkmark-empty icon-small"></i>Order 24/7</li>
-                                <li><i class="ion-ios-checkmark-empty icon-small"></i>Access to newest creations</li>
-                                <li><i class="ion-ios-checkmark-empty icon-small"></i>Free delivery</li>
-                            </ul>
-                        </div>
-                        <div>
-                            <a href="#" class="btn btn-ghost">Sign up now</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col span-1-of-3">
-                    <div class="plan-box">
-                        <div>
-                            <h3>Starter</h3>
-                            <p class="plan-price">19$ <span>/ meal</span></p>
-                            <p class="plan-price-meal">&nbsp;</p>
-                        </div>
-                        <div>
-                            <ul>
-                                <li><i class="ion-ios-checkmark-empty icon-small"></i>1 meal</li>
-                                <li><i class="ion-ios-checkmark-empty icon-small"></i>Order from 8 am to 12 pm</li>
-                                <li><i class="ion-ios-close-empty icon-small"></i></li>
-                                <li><i class="ion-ios-checkmark-empty icon-small"></i>Free delivery</li>
-                            </ul>
-                        </div>
-                        <div>
-                            <a href="#" class="btn btn-ghost">Sign up now</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        
-        <section class="section-form">
-            <div class="row">
-                <h2>We're happy to hear from you</h2>
-            </div>
-            <div class="row">
-                <form method="post" action="#" class="contact-form">
-                    <div class="row">
-                        <div class="col span-1-of-3">
-                            <label for="name">Name</label>
-                        </div>
-                        <div class="col span-2-of-3">
-                            <input type="text" name="name" id="name" placeholder="Your name" required>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col span-1-of-3">
-                            <label for="email">Email</label>
-                        </div>
-                        <div class="col span-2-of-3">
-                            <input type="email" name="email" id="email" placeholder="Your email" required>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col span-1-of-3">
-                            <label for="find-us">How did you find us?</label>
-                        </div>
-                        <div class="col span-2-of-3">
-                            <select name="find-us" id="find-us">
-                                <option value="friends" selected>Friends</option>
-                                <option value="search">Search engine</option>
-                                <option value="ad">Advertisement</option>
-                                <option value="other">Other</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col span-1-of-3">
-                            <label>Newsletter?</label>
-                        </div>
-                        <div class="col span-2-of-3">
-                            <input type="checkbox" name="news" id="news" checked> Yes, please
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col span-1-of-3">
-                            <label>Drop us a line</label>
-                        </div>
-                        <div class="col span-2-of-3">
-                            <textarea name="message" placeholder="Your message"></textarea>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col span-1-of-3">
-                            <label>&nbsp;</label>
-                        </div>
-                        <div class="col span-2-of-3">
-                            <input type="submit" value="Send it!">
-                        </div>
-                    </div>
-                    
-                </form>
-                
-            </div>
-        </section>
-        
+      
         <footer>
             <div class="row">
                 <div class="col span-1-of-2">
@@ -566,7 +565,7 @@ I was looking for a quick and easy food delivery service in San Franciso. I trie
             </div>
             <div class="row">
                 <p>
-                    Copyright &copy; 2015 by Omnifood. All rights reserved.
+                    Copyright &copy; 2016 by EVERLASTING WARDROBE. All rights reserved.
                 </p>
             </div>
         </footer>
@@ -588,7 +587,95 @@ I was looking for a quick and easy food delivery service in San Franciso. I trie
       ga('send', 'pageview');
 
     </script>
-    
+    <script type="text/javascript">
+    	'use strict'
+    var organicCount = 0;
+    var USACount = 0;
+    var PriceCount = 0;
+    var temp=[1,1,1,1,1,1,1,1,1]; //Organic Button, USA Button, Jazz, Pop, Techno, Indie, Hiphop, Lullaby, Jock Jams.
+    function setColorNormal(btn,id,count) {
+        let property = document.getElementById(btn);
+        if (temp[count] == 0) {
+            property.style.backgroundColor = "#e7e7e7";
+            property.style.color = "#008000";
+            document.getElementById(id).value="True";
+            temp[count] = 1;        
+        }
+        else {
+            property.style.backgroundColor = "#006400";
+            property.style.color = "#FFFFFF";
+            document.getElementById(id).value="False";
+            temp[count] = 0;
+        }
+      }
+
+    var lastClickPrice = -1;
+    function setColorPrice(btn,val) {
+      if(val == lastClickPrice)
+      {
+        document.getElementById("PriceLevel").value=0;
+        for(var i = 1; i<=5;i++)
+        {
+            var temp = "PriceLevel" + i;
+            document.getElementById(temp).style.backgroundColor = "#e7e7e7";
+            document.getElementById(temp).style.color = "#008000";
+            lastClickPrice = -1;
+        }
+        return;
+      }
+      else
+      {
+        lastClickPrice = val;
+        document.getElementById("PriceLevel").value=val;
+        for(var i = 1; i<=val;i++)
+        {
+              var temp = 'PriceLevel' + i;
+              document.getElementById(temp).style.backgroundColor = "#006400";
+              document.getElementById(temp).style.color = "#FFFFFF";
+        }
+        for(var i = val+1; i<=5;i++)
+        {
+              var temp = "PriceLevel" + i;
+              document.getElementById(temp).style.backgroundColor = "#e7e7e7";
+              document.getElementById(temp).style.color = "#008000";
+        }
+      }
+      
+    }
+    var lastClickRating = -1;
+    function setColorRating(btn,val) {
+      if(val == lastClickRating)
+      {
+        document.getElementById("RatingLevel").value=0;
+        for(var i = 1; i<=5;i++)
+        {
+            var temp = "RatingLevel" + i;
+            document.getElementById(temp).style.backgroundColor = "#e7e7e7";
+            document.getElementById(temp).style.color = "#008000";
+            lastClickRating = -1;
+        }
+        return;
+      }
+      else
+      {
+        lastClickRating = val;
+        document.getElementById("RatingLevel").value=val;
+        for(var i = 1; i<=val;i++)
+        {
+              var temp = 'RatingLevel' + i;
+              document.getElementById(temp).style.backgroundColor = "#006400";
+              document.getElementById(temp).style.color = "#FFFFFF";
+        }
+        for(var i = val+1; i<=5;i++)
+        {
+              var temp = "RatingLevel" + i;
+              document.getElementById(temp).style.backgroundColor = "#e7e7e7";
+              document.getElementById(temp).style.color = "#008000";
+        }
+      }
+      
+    }
+    </script>
     </body>  
     
 </html>
