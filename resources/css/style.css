@@ -42,7 +42,6 @@ html {
 
 
 .row {
-    max-width: 1140px;
     margin: 0 auto;
 }
 
@@ -199,7 +198,7 @@ input[type=submit]:active {
 header {
 
     background-size: cover;
-    height: 100vh;
+    height: 100%;
     background-attachment: fixed;
 }
 
@@ -212,19 +211,30 @@ header {
     z-index: 3;
     margin-left: 20%;
 }
-/*.size-text-box {
-    position: relative;
-    left: 100%;
+.size-text-box {
+    position: absolute;
+    left: 89%;
     -webkit-transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
-    margin-bottom: 30%;
-    padding-top: 40%;
-    padding-left: 10%;
-}*/
+    margin-bottom: 0;
+    padding-top: 45%;
+    padding-left: 25%;
+    z-index: 3;
+    width: 100%;
+}
+.size-convertor-button
+{
+    position: absolute;
+    margin:0 auto;
+}
 .logo {
-    height: 200px;
+/*    height: 200px;
     width: auto;
+*/    
+    max-width: 40%;
+    height: auto;
+    width: auto\9;
     float: left;
     margin-top: 0px;
     z-index: 100;
@@ -325,8 +335,9 @@ header {
 .meals-showcase {
     list-style: none;
     width:80%;
-    margin:auto;
-    height:500px;
+    margin-bottom: 5%;
+    margin-left: auto;
+    margin-right: auto;
     overflow: hidden;
 }
 
@@ -334,8 +345,11 @@ header {
     display: block;
     float: left;
     width: 25%;
-    height:100%;
+    height:auto;
     overflow:hidden;
+    padding-left: 2%;
+    padding-right: 2%;
+
 }
 
 .meal-photo {
@@ -348,13 +362,14 @@ header {
 
 .meal-photo img {
     opacity: 0.7;
-    width: 100%;
-    height: auto;
+    width: 250px;
+    height: 250px;
     -webkit-transform: scale(1.15);
     -ms-transform: scale(1.15);
     transform: scale(1.15);
     -webkit-transition: -webkit-transform 0.5s, opacity 0.5s;
     transition: transform 0.5s, opacity 0.5s;
+
 }
 
 .meal-photo img:hover {
