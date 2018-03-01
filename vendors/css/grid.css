@@ -11,13 +11,15 @@
 
 .row {
     zoom: 1; /* For IE 6/7 (trigger hasLayout) */
+    min-width: 100%;
+    text-align: left;
 }
 
-.row:before,
+/*.row:before,
 .row:after {
     content:"";
     display:table;
-}
+}*/
 .row:after {
     clear:both;
 }
@@ -27,7 +29,9 @@
 .col {
 	display: block;
 	float:left;
-	margin: 1% 0 1% 1.6%;
+	margin: 1% 0 5% 5%;
+	text-align: right;
+	min-width: 30%;
 }
 
 .col:first-child { margin-left: 0; } /* all browsers except IE6 and lower */
