@@ -1,6 +1,9 @@
-<!DOCTYPE html> <html lang="en">     <head>         <meta charset="utf-8">
+<!DOCTYPE html> 
+<html lang="en">     
+<head>         
+	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+	<!-- Font -->
 	<link href='https://fonts.googleapis.com/css?family=Alfa Slab One' rel='stylesheet'>
 	<link href='https://fonts.googleapis.com/css?family=Autour One' rel='stylesheet'>
 	<link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,300italic' rel='stylesheet' type='text/css'>
@@ -11,7 +14,7 @@
 
 	<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-multiselect/0.9.13/js/bootstrap-multiselect.js"></script>
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-multiselect/0.9.13/css/bootstrap-multiselect.css">
+	<link rel="stylesheet" href="/resources/css/multicheckbox.css">
 
 	<script type="text/javascript" src="./resources/js/searchFunction.js"></script>
 	<link rel="stylesheet" type="text/css" href="./resources/css/page.css">
@@ -24,21 +27,6 @@
 	<link rel="stylesheet" type="text/css" href="resources/css/queries.css">
 
 	<title>Everlasting Wardrobe</title>
-
-	<link rel="apple-touch-icon" sizes="57x57" href="/resources/favicons/apple-touch-icon-57x57.png">
-	<link rel="apple-touch-icon" sizes="60x60" href="/resources/favicons/apple-touch-icon-60x60.png">
-	<link rel="apple-touch-icon" sizes="72x72" href="/resources/favicons/apple-touch-icon-72x72.png">
-	<link rel="apple-touch-icon" sizes="76x76" href="/resources/favicons/apple-touch-icon-76x76.png">
-	<link rel="apple-touch-icon" sizes="114x114" href="/resources/favicons/apple-touch-icon-114x114.png">
-	<link rel="apple-touch-icon" sizes="120x120" href="/resources/favicons/apple-touch-icon-120x120.png">
-	<link rel="apple-touch-icon" sizes="144x144" href="/resources/favicons/apple-touch-icon-144x144.png">
-	<link rel="apple-touch-icon" sizes="152x152" href="/resources/favicons/apple-touch-icon-152x152.png">
-	<link rel="apple-touch-icon" sizes="180x180" href="/resources/favicons/apple-touch-icon-180x180.png">
-	<link rel="icon" type="image/png" href="/resources/favicons/favicon-32x32.png" sizes="32x32">
-	<link rel="icon" type="image/png" href="/resources/favicons/favicon-194x194.png" sizes="194x194">
-	<link rel="icon" type="image/png" href="/resources/favicons/favicon-96x96.png" sizes="96x96">
-	<link rel="icon" type="image/png" href="/resources/favicons/android-chrome-192x192.png" sizes="192x192">
-	<link rel="icon" type="image/png" href="/resources/favicons/favicon-16x16.png" sizes="16x16">
 	<link rel="manifest" href="/resources/favicons/manifest.json">
 	<link rel="shortcut icon" href="/resources/favicons/favicon.ico">
 	<meta name="msapplication-TileColor" content="#da532c">
@@ -76,13 +64,14 @@
 		<div id="myVideoContainer">
 			<div id="overlay"></div>
 			<video autoplay loop id="myVideo">
-				<source src="./resources/videos/start_video.mov">
+				<source src="./resources/videos/avc_start_video.mp4">
 				</video>
 			</div>
 		</div>
 	</header>
 
-	<section class="section-features js--section-features" id="searchBar">
+	<!-- <section class="section-features js--section-features" id="searchBar"> -->
+		<section class="section-meals" id="searchBar">
 		<div class="row">
 			<h2 id="searchNow">SEARCH NOW</h2>
 		</div>
@@ -103,7 +92,7 @@
 			<div class="container searchFont"  align="center">
 				<div class=border>
 					<button type="button" class="btn btn-info">Search By</button>
-					<input class="search-box" name="seach" type="text" />
+					<input class="search-box" name="seach" type="text" style="width:100%" />
 				</div>
 				<div id="searchContainer">
 					<div class="row" id="basicOptions">
@@ -119,208 +108,220 @@
 						</label>
 						<div style="border-left:1px solid #000;height:100%"></div>
 						<label>Age Range</label>
-						<select id="selectionOption">
-							<option>0-6 month</option>
-							<option>6-12 month</option>
-							<option>1-4 year</option>
-							<option>5-8 year</option>
-							<option>9-12 year</option>
-							<option>13-16 year</option>
+						<select id="checkboxes" style="width: auto;">
+							<option value="6mo">0-6 month</option>
+							<option value="12mo">6-12 month</option> 
+							<option value="4yr">1-4 year</option>
+							<option value="8yr">5-8 year</option>
+							<option value="12yr">9-12 year</option>
+							<option value="16yr">13-16 year</option>
 						</select>
-<!-- 							<button class="btn btn-info">Advanced Option</button>
- -->					  	<!-- <br>
-					    <input type="button" id="OrganicButton" value = "Organic" style="background-color: #e7e7e7; color: #008000" onclick="setColorNormal('OrganicButton','Organic',0)";/>
-					  	<br>
-					    <input type="button" id="USAButton" value = "Made in USA" style="background-color: #e7e7e7; color: #008000" onclick="setColorNormal('USAButton','USA',1)";/>
+
 					</div>
-					<div class="row">
-						<div class="col">
-							<label for="exampleFormControlSelect1">Price</label>
-							<br>
-							<input type="button" id="PriceLevel1" value = "$" style="background-color: #e7e7e7; color: #008000" onclick="setColorPrice('PriceLevel1',1)";/>
-							<input type="button" id="PriceLevel2" value = "$$" style="background-color: #e7e7e7; color: #008000" onclick="setColorPrice('PriceLevel2',2)";/>
-							<input type="button" id="PriceLevel3" value = "$$$" style="background-color: #e7e7e7; color: #008000" onclick="setColorPrice('PriceLevel3',3)";/>
-							<input type="button" id="PriceLevel4" value = "$$$$" style="background-color: #e7e7e7; color: #008000" onclick="setColorPrice('PriceLevel4',4)";/>
-							<input type="button" id="PriceLevel5" value = "$$$$$" style="background-color: #e7e7e7; color: #008000" onclick="setColorPrice('PriceLevel5',5)";/>
-						</div>
-						<div class="col">
-							<label>Rating</label>
-							 <br>
-							<input type="button" id="RatingLevel1" value = "&#9733" style="background-color: #e7e7e7; color: #008000" onclick="setColorRating('PriceLevel1',1)";/>
-							<input type="button" id="RatingLevel2" value = "&#9733" style="background-color: #e7e7e7; color: #008000" onclick="setColorRating('PriceLevel2',2)";/>
-							<input type="button" id="RatingLevel3" value = "&#9733" style="background-color: #e7e7e7; color: #008000" onclick="setColorRating('PriceLevel3',3)";/>
-							<input type="button" id="RatingLevel4" value = "&#9733" style="background-color: #e7e7e7; color: #008000" onclick="setColorRating('PriceLevel4',4)";/>
-							<input type="button" id="RatingLevel5" value = "&#9733" style="background-color: #e7e7e7; color: #008000" onclick="setColorRating('PriceLevel5',5)";/>
-						</div>
-						<div class="col">
-						  <label>Genres</label><br>
-						    <select id="multiple-checkboxes" multiple="multiple">
-						        <option value="Jazz">Jazz</option>
-						        <option value="Pop">Pop</option>
-						        <option value="Techno">Techno</option>
-						        <option value="Indie">Indie</option>
-						        <option value="HipHop">Hip Hop</option>
-						        <option value="Lullaby">Lullaby</option>						        
-						        <option value="JockJams">Jock Jams</option>
-						    </select>
-						</div>
-						<script type="text/javascript">
-						    $(document).ready(function() {
-						        $('#multiple-checkboxes').multiselect();
-						    });
-						</script> -->
-<!-- 					    <div class="col">
-						<input type="radio" name="Special" value="Accessory">Accessory Only<br>
-						<input type="radio" name="Special" value="Outwear">Outwear Only<br>
-						<input type="radio" name="Special" value="Swimwear">swimwear Only<br>
-						<input type="radio" name="Special" value="Formal">Formalwear Only<br>
-						<input type="radio" name="Special" value="None">None<br>
-					</div> -->
+				</div>
+				<button type="button" class="btn btn-info" style="float: left;" onclick="showAdvancedSearch()">Advanced Option</button>
+				<script type="text/javascript">
+					function showAdvancedSearch()
+					{
+						var element = document.getElementById("advancedSearch");
+						if(element.style.display == "none")
+						{
+							element.style.display= "block";
+						}
+						else
+						{
+							element.style.display = "none";
+						}
+					}
+				</script>
+			</div>
+			<div class="container searchFont" align="center" id="advancedSearch" style="float:center; display: none; overflow: initial; z-index: 100">
+				<br>
+				<input type="button" class="btn btn-info" id="OrganicButton" value = "Organic" style="background-color: #e7e7e7; color: #008000" onclick="setColorNormal('OrganicButton','Organic',0)";/>
+				<input type="button" class="btn btn-info" id="USAButton" value = "Made in USA" style="background-color: #e7e7e7; color: #008000" onclick="setColorNormal('USAButton','USA',1)";/>
+				<div style="margin-top: 3%">
+				<label>Genres</label>
+					<select id="multiple-checkboxes" multiple="multiple">
+						<option value="Jazz">Jazz</option>
+						<option value="Pop">Pop</option>
+						<option value="Techno">Techno</option>
+						<option value="Indie">Indie</option>
+						<option value="HipHop">Hip Hop</option>
+						<option value="Lullaby">Lullaby</option>						        
+						<option value="JockJams">Jock Jams</option>
+					</select>
+					<p style="size: 10px;opacity: 0.5">Choose One or More</p>
+					<script type="text/javascript">
+						$(document).ready(function() {
+							$('#multiple-checkboxes').multiselect();
+						});
+					</script>
+				</div>
+				<div style="margin-top: 3%">
+					<label for="exampleFormControlSelect1">Price</label>
+					<br>
+					<input type="button" class="btn btn-info" id="PriceLevel1" value = "$" style="background-color: #e7e7e7; color: #008000" onclick="setColorPrice('PriceLevel1',1)";/>
+					<input type="button" class="btn btn-info" id="PriceLevel2" value = "$$" style="background-color: #e7e7e7; color: #008000" onclick="setColorPrice('PriceLevel2',2)";/>
+					<input type="button" class="btn btn-info" id="PriceLevel3" value = "$$$" style="background-color: #e7e7e7; color: #008000" onclick="setColorPrice('PriceLevel3',3)";/>
+					<input type="button" class="btn btn-info" id="PriceLevel4" value = "$$$$" style="background-color: #e7e7e7; color: #008000" onclick="setColorPrice('PriceLevel4',4)";/>
+					<input type="button" class="btn btn-info" id="PriceLevel5" value = "$$$$$" style="background-color: #e7e7e7; color: #008000" onclick="setColorPrice('PriceLevel5',5)";/>
+				</div>
+
+				<div style="margin-top: 3%">
+					<label>Rating</label>
+					<br>
+					<input type="button" class="btn btn-info" id="RatingLevel1" value = "&#9733" style="background-color: #e7e7e7; color: #008000" onclick="setColorRating('PriceLevel1',1)";/>
+					<input type="button" class="btn btn-info" id="RatingLevel2" value = "&#9733" style="background-color: #e7e7e7; color: #008000" onclick="setColorRating('PriceLevel2',2)";/>
+					<input type="button" class="btn btn-info" id="RatingLevel3" value = "&#9733" style="background-color: #e7e7e7; color: #008000" onclick="setColorRating('PriceLevel3',3)";/>
+					<input type="button" class="btn btn-info" id="RatingLevel4" value = "&#9733" style="background-color: #e7e7e7; color: #008000" onclick="setColorRating('PriceLevel4',4)";/>
+					<input type="button" class="btn btn-info" id="RatingLevel5" value = "&#9733" style="background-color: #e7e7e7; color: #008000" onclick="setColorRating('PriceLevel5',5)";/>
+				</div>
+				<div>
+					
 				</div>
 			</div>
+		</form>
+
+	</section>
+
+	<section class="section-meals">
+		<div class="row">
+			<h2 id="browseSuggestedCollections">BROWSE SUGGESTED COLLECTIONS</h2>
 		</div>
-
-	</form>
-</section>
-
-<section class="section-meals">
-	<div class="row">
-		<h2 id="browseSuggestedCollections">BROWSE SUGGESTED COLLECTIONS</h2>
-	</div>
-	<div class="imgContainer">
-		<div class="row" id="subtitles">ECO-FRIENDLY</div>
-		<ul class="meals-showcase clearfix">
-			<li>
-				<figure class="meal-photo">
-					<img src="./Creative Department/Deck Files/Milk Shirt.png" alt="Korean bibimbap with egg and vegetables">
-				</figure>
-			</li>
-			<li>
-				<figure class="meal-photo">
-					<img src="./Creative Department/Deck Files/money.png" alt="Korean bibimbap with egg and vegetables">
-				</figure>
-			</li>
-			<li>
-				<figure class="meal-photo">
-					<img src="./Creative Department/Deck Files/Mother.png" alt="Korean bibimbap with egg and vegetables">
-				</figure>
-			</li>
-			<li>
-				<figure class="meal-photo">
-					<img src="./Creative Department/Deck Files/museum.png" alt="Korean bibimbap with egg and vegetables">
-				</figure>
-			</li>
-		</ul>
-	</div>
-	<div class="imgContainer">
-		<div class="row" id="subtitles">MADE IN THE USA</div>
-		<ul class="meals-showcase clearfix">
-			<li>
-				<figure class="meal-photo">
-					<img src="./resources/img/marmot.jpg" alt="Korean bibimbap with egg and vegetables">
-				</figure>
-			</li>
-			<li>
-				<figure class="meal-photo">
-					<img src="./resources/img/cat.jpg" alt="Korean bibimbap with egg and vegetables">
-				</figure>
-			</li>
-			<li>
-				<figure class="meal-photo">
-					<img src="./resources/img/hamster.jpg" alt="Korean bibimbap with egg and vegetables">
-				</figure>
-			</li>
-			<li>
-				<figure class="meal-photo">
-					<img src="./resources/img/dog2.jpg" alt="Korean bibimbap with egg and vegetables">
-				</figure>
-			</li>
-		</ul>
-	</div>
-	<div class="imgContainer">
-		<div class="row" id="subtitles">MOST POPULAR</div>
-		<ul class="meals-showcase clearfix">
-			<li>
-				<figure class="meal-photo">
-					<img src="./Creative Department/Deck Files/Milk Shirt.png" alt="Korean bibimbap with egg and vegetables">
-				</figure>
-			</li>
-			<li>
-				<figure class="meal-photo">
-					<img src="./Creative Department/Deck Files/money.png" alt="Korean bibimbap with egg and vegetables">
-				</figure>
-			</li>
-			<li>
-				<figure class="meal-photo">
-					<img src="./Creative Department/Deck Files/Mother.png" alt="Korean bibimbap with egg and vegetables">
-				</figure>
-			</li>
-			<li>
-				<figure class="meal-photo">
-					<img src="./Creative Department/Deck Files/museum.png" alt="Korean bibimbap with egg and vegetables">
-				</figure>
-			</li>
-		</ul>
-	</div>
-</section>
-
-
-<header>
-	<div id="video_box">
-		<div id="video-background-filter"></div>
-		<div id="content-overlays">
-			<div class="second-text-box">
-				<h4 class="CHILDFASHION" id="MORESHOPPINGTOOLS">FOR MORE SHOPPING TOOLS</h4>
-				<h1 class="OUTWITHTHEOLD">CHECK OUT<br>THE SIZE CONVERTER</h1>
-
-				<div class="SIZEBUTTON">
-					<button type="button" class="Start-button" id="Size-button">
-						<a href="#searchBar">
-							SIZE CONVERTOR
-						</a>
-					</button>
-				</div>
-			</div>	
-
-		</div>
-
-	</div>
-	<div id="myVideoContainer">
-		<div id="overlay"></div>
-		<video autoplay loop id="myVideo">
-			<source src="./resources/videos/sizeConvertor_video.mov" loop>
-			</video>
-		</div>
-	</div>
-</header>
-
-
-<footer>
-	<div class="row">
-		<div class="col span-1-of-2">
-			<ul class="footer-nav">
-				<li><a href="#">About us</a></li>
-				<li><a href="#">Blog</a></li>
-				<li><a href="#">Press</a></li>
-				<li><a href="#">iOS App</a></li>
-				<li><a href="#">Android App</a></li>
+		<div class="imgContainer">
+			<div class="row" id="subtitles">ECO-FRIENDLY</div>
+			<ul class="meals-showcase clearfix">
+				<li>
+					<figure class="meal-photo">
+						<img src="./resources/img/brand_ex0.jpg" alt="Korean bibimbap with egg and vegetables">
+					</figure>
+				</li>
+				<li>
+					<figure class="meal-photo">
+						<img src="./resources/img/brand_ex1.png" alt="Korean bibimbap with egg and vegetables">
+					</figure>
+				</li>
+				<li>
+					<figure class="meal-photo">
+						<img src="./resources/img/brand_ex2.png" alt="Korean bibimbap with egg and vegetables">
+					</figure>
+				</li>
+				<li>
+					<figure class="meal-photo">
+						<img src="./resources/img/brand_ex3.gif" alt="Korean bibimbap with egg and vegetables">
+					</figure>
+				</li>
 			</ul>
 		</div>
-		<div class="col span-1-of-2">
-			<ul class="social-links">
-				<li><a href="#"><i class="ion-social-facebook"></i></a></li>
-				<li><a href="#"><i class="ion-social-twitter"></i></a></li>
-				<li><a href="#"><i class="ion-social-googleplus"></i></a></li>
-				<li><a href="#"><i class="ion-social-instagram"></i></a></li>
+		<div class="imgContainer">
+			<div class="row" id="subtitles">MADE IN THE USA</div>
+			<ul class="meals-showcase clearfix">
+				<li>
+					<figure class="meal-photo">
+						<img src="./resources/img/brand_ex4.png" alt="Korean bibimbap with egg and vegetables">
+					</figure>
+				</li>
+				<li>
+					<figure class="meal-photo">
+						<img src="./resources/img/brand_ex5.jpeg" alt="Korean bibimbap with egg and vegetables">
+					</figure>
+				</li>
+				<li>
+					<figure class="meal-photo">
+						<img src="./resources/img/brand_ex6.jpg" alt="Korean bibimbap with egg and vegetables">
+					</figure>
+				</li>
+				<li>
+					<figure class="meal-photo">
+						<img src="./resources/img/brand_ex7.jpg" alt="Korean bibimbap with egg and vegetables">
+					</figure>
+				</li>
 			</ul>
 		</div>
-	</div>
-	<div class="row">
-		<p>
-			Copyright &copy; 2016 by EVERLASTING WARDROBE. All rights reserved.
-		</p>
-	</div>
-</footer>
+		<div class="imgContainer">
+			<div class="row" id="subtitles">MOST POPULAR</div>
+			<ul class="meals-showcase clearfix">
+				<li>
+					<figure class="meal-photo">
+						<img src="./resources/img/brand_ex8.jpg" alt="Korean bibimbap with egg and vegetables">
+					</figure>
+				</li>
+				<li>
+					<figure class="meal-photo">
+						<img src="./resources/img/brand_ex9.png" alt="Korean bibimbap with egg and vegetables">
+					</figure>
+				</li>
+				<li>
+					<figure class="meal-photo">
+						<img src="./resources/img/brand_ex10.png" alt="Korean bibimbap with egg and vegetables">
+					</figure>
+				</li>
+				<li>
+					<figure class="meal-photo">
+						<img src="./resources/img/brand_ex11.png" alt="Korean bibimbap with egg and vegetables">
+					</figure>
+				</li>
+			</ul>
+		</div>
+	</section>
+
+
+	<header>
+		<div id="video_box">
+			<div id="video-background-filter"></div>
+			<div id="content-overlays">
+				<div class="second-text-box">
+					<h4 class="CHILDFASHION" id="MORESHOPPINGTOOLS">FOR MORE SHOPPING TOOLS</h4>
+					<h1 class="OUTWITHTHEOLD">CHECK OUT<br>THE SIZE CONVERTER</h1>
+
+					<div class="SIZEBUTTON">
+						<button type="button" class="Start-button" id="Size-button">
+							<a href="#searchBar">
+								SIZE CONVERTOR
+							</a>
+						</button>
+					</div>
+				</div>	
+
+			</div>
+
+		</div>
+		<div id="myVideoContainer">
+			<div id="overlay"></div>
+			<video autoplay loop id="myVideo">
+				<source src="./resources/videos/sizeConvertor_video.mov" loop>
+				</video>
+			</div>
+		</div>
+	</header>
+
+
+	<footer>
+		<div class="row">
+			<div class="col span-1-of-2">
+				<ul class="footer-nav">
+					<li><a href="#">About us</a></li>
+					<li><a href="#">Blog</a></li>
+					<li><a href="#">Press</a></li>
+					<li><a href="#">iOS App</a></li>
+					<li><a href="#">Android App</a></li>
+				</ul>
+			</div>
+			<div class="col span-1-of-2">
+				<ul class="social-links">
+					<li><a href="#"><i class="ion-social-facebook"></i></a></li>
+					<li><a href="#"><i class="ion-social-twitter"></i></a></li>
+					<li><a href="#"><i class="ion-social-googleplus"></i></a></li>
+					<li><a href="#"><i class="ion-social-instagram"></i></a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="row">
+			<p>
+				Copyright &copy; 2016 by EVERLASTING WARDROBE. All rights reserved.
+			</p>
+		</div>
+	</footer>
 
 
 </body>  
