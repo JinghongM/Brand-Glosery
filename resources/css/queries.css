@@ -1,16 +1,69 @@
 /* Big tablet to 1200px (widths smaller taht the 1140px row) */
-/*@media only screen and (max-width: 1200px) {
+@media only screen and (max-width: 1200px) {
     .hero-text-box {
         width: 100%;
         padding: 0 2%;
+        margin-top: 30%;
+
+
     }
     
     .row { padding: 0 2%; }
+    .Start-button
+    {
+        margin-left: 60px;
+        margin-top: 20px;
+    }
+    .searchFont
+    {
+        font-size: 120%;
+
+    }
+    .container
+    {
+        width:70%;
+
+    }
 }
-*/
+
 
 /* Small tablet to big tablet: from 768px to 1023px */
-/*@media only screen and (max-width: 1023px) {
+@media only screen and (max-width: 1023px) {
+    h1
+    {
+        font-size: 30px;
+    }
+    h4
+    {
+        font-size: 15px;
+    }
+    #searchNow
+    {
+        font-size: 50px;
+    }
+    .Start-button
+    {
+        margin-left: 40px;
+        height: 100%;
+    }
+    .hero-text-box
+    {
+        width:80%;
+        padding:0 2%;
+        margin-top: 20%;
+
+
+    }
+    .searchFont
+    {
+        font-size: 80%;
+
+    }
+    .container
+    {
+        width:80%;
+
+    }
     body { font-size: 18px; }
     section { padding: 60px 0; }
     
@@ -31,31 +84,65 @@
         margin-right: 5px;
     }
     
-    .city-feature { font-size: 90%; }
-    
     .plan-box {
         width: 100%;
         margin-left: 0%;
     }
-    
-    .plan-price { font-size: 250%; }
     .contact-form { width: 80%; }
 }
 
-*/
+
 
 /* Small phones to small tablets: from 481px to 767px */
-/*@media only screen and (max-width: 767px) {
+@media only screen and (max-width: 767px) {
+    h1
+    {
+        font-size: 20px;
+    }
+    h4
+    {
+        margin-top:5px;
+        font-size: 10px;
+    }
+    #searchNow
+    {
+        font-size: 30px;
+    }
+    .Start-button
+    {
+        margin-left: 60px;
+        margin-top: 5px;
+        height:100%;
+    }
+    .container
+    {
+        width:100%;
+
+    }
     body { font-size: 16px; }
     section { padding: 30px 0; }
-    
-    .row,
-    .hero-text-box { padding: 0 4%; }
+    .row
+    {
+        width: 80%;
+        padding: 0 4%;
+        margin-top: 0%;
+
+
+    }
+    .hero-text-box { 
+        width: 80%;
+        padding: 0 4%;
+        margin-top: 20%;
+
+    }
     .col { 
         width: 100%;
         margin: 0 0 4% 0;
     }
-    
+    #checkboxes
+    {
+        height:100%;
+    }
     
     .main-nav { display: none; }
     .mobile-nav-icon {display: inline-block;}
@@ -84,12 +171,6 @@
     .sticky .main-nav li a:visited { padding: 10px 0; }
     .sticky .mobile-nav-icon { margin-top: 10px; }
     .sticky .mobile-nav-icon i { color: #555; }
-    
-    
-    
-    h1 { font-size: 180%; }
-    h2 { font-size: 150%; }
-    
     .long-copy {
         width: 100%;
         margin-left: 0%;
@@ -112,10 +193,62 @@
 }
 
 
-*/
+
 /* Small phones: from 0 to 480px */
-/*@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 480px) {
+    h1,#searchNow
+    {
+        font-size: 15px;
+    }
+    h4
+    {
+        margin-top:2px;
+        font-size: 3px;
+    }
+    .hero-text-box { 
+        width: 80%;
+        padding: 0 4%;
+        margin-top: 10%;
+        
+    }
+    #searchNow
+    {
+        font-size: 25px;
+    }
+    .Start-button
+    {
+        margin-left: 60px;
+        margin-top: 5px;
+/*        height:30px;*/
+        height: 100%;
+    }
+    .container
+    {
+        width:100%;
+
+    }
+    #checkboxes
+    {
+        height:80%;
+    }
+    .row,
+    {
+        width: 100%;
+        padding: 0 4%;
+        margin-top: 0%;
+    }
+    .hero-text-box { 
+        width: 100%;
+        padding: 0 4%;
+        margin-top: 17%;
+
+    }
+    .CHILDFASHION
+    {
+        margin-bottom: 2px;
+    }
     section { padding: 25px 0; }
     .contact-form {width: 100%; }
+
 }
-*/
+

@@ -17,12 +17,14 @@
 .OUTWITHTHEOLD
 {
 	font-family: 'Alfa Slab One';
+	color: #fff;
+
 }
-#MORESHOPPINGTOOLS
+/*#MORESHOPPINGTOOLS
 {
 	font-size: 30px;
 
-}
+}*/
 .second-text-box
 {
 	position: absolute;
@@ -45,15 +47,15 @@
 }
 .CHILDFASHION
 {
-	padding-left: 10%;
+	/*padding-left: 10%;*/
 	margin-bottom: 3%;
 	font-family: 'Autour One';
 	color: white;
 }
 .Start-button
 {
-/*			  display: inline-block;
-*/			  font-weight: 400;
+
+font-weight: 400;
 text-align: center;
 white-space: nowrap;
 vertical-align: middle;
@@ -72,15 +74,8 @@ color: #fff;
 background-color: #17a2b8;
 border-color: #17a2b8;
 }
-#Start-button
-{
-	margin-left: 60px;
-	margin-top: 20px;
-}
-#Size-button
-{
-	margin-top: -10%;
-}
+
+
 #myVideoContainer
 {
 	position:relative;
@@ -110,6 +105,7 @@ border-color: #17a2b8;
 {
 	font-weight: bold;
 	font-size: 80px;
+	text-align: center;
 }
 #browseSuggestedCollections
 {
@@ -177,7 +173,6 @@ border-color: #17a2b8;
 	padding-left: 15px;
 	margin-right: auto;
 	margin-left: auto;
-	width:70%;
 	font-weight: bold;
 }
 .imgContainer {
@@ -286,22 +281,6 @@ input[type="checkbox"], input[type="radio"]{
 }
 /*Check box*/
 
-
-
-input[type="checkbox"]:checked + .label-text:before{
-	content: "\f14a";
-	color: #2980b9;
-	animation: effect 250ms ease-in;
-}
-
-input[type="checkbox"]:disabled + .label-text{
-	color: #aaa;
-}
-
-input[type="checkbox"]:disabled + .label-text:before{
-	content: "\f0c8";
-	color: #ccc;
-}
 
 /*Radio box*/
 
