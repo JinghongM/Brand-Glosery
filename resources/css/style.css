@@ -47,6 +47,8 @@ html {
 
 section {
     padding: 10% 0;
+    height: auto;
+    overflow: auto;
 }
 
 .box {
@@ -330,6 +332,8 @@ header {
 
 .section-meals {
     padding: 0;
+    width:100%;
+    overflow: hidden;
 }
 
 .meals-showcase {
@@ -362,8 +366,8 @@ header {
 
 .meal-photo img {
     opacity: 0.7;
-    width: 250px;
-    height: 250px;
+    width: 100%;
+    height: auto;
     -webkit-transform: scale(1.15);
     -ms-transform: scale(1.15);
     transform: scale(1.15);
@@ -575,7 +579,6 @@ input[type=text],
 input[type=email],
 select,
 textarea {
-    width: 100%;
     padding: 7px;
     border-radius: 3px;
     border: 1px solid #ccc;
