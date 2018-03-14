@@ -8,12 +8,15 @@ function setColorNormal(btn,id,count) {
 	if (temp[count] == 0) {
 		property.style.backgroundColor = "transparent";
 		property.style.color = "#5bc0de";
+		property.style.border = "1px solid #46b8da";		
+
 		document.getElementById(id).value="True";
 		temp[count] = 1;        
 	}
 	else {
 		property.style.backgroundColor = "#5bc0de";
 		property.style.color = "#FFFFFF";
+		property.style.border = "3px solid #0568e1";		
 		document.getElementById(id).value="False";
 		temp[count] = 0;
 	}
@@ -30,6 +33,7 @@ function setColorPrice(btn,val) {
 			var temp = "PriceLevel" + i;
 			document.getElementById(temp).style.backgroundColor = "transparent";
 			document.getElementById(temp).style.color = "#5bc0de";
+			document.getElementById(temp).style.border = "1px solid #46b8da";		
 			lastClickPrice = -1;
 		}
 		return;
@@ -43,12 +47,15 @@ function setColorPrice(btn,val) {
 			var temp = 'PriceLevel' + i;
 			document.getElementById(temp).style.backgroundColor = "#5bc0de";
 			document.getElementById(temp).style.color = "#FFFFFF";
+			document.getElementById(temp).style.border = "3px solid #0568e1";		
+
 		}
 		for(var i = val+1; i<=5;i++)
 		{
 			var temp = "PriceLevel" + i;
 			document.getElementById(temp).style.backgroundColor = "transparent";
 			document.getElementById(temp).style.color = "#5bc0de";
+			document.getElementById(temp).style.border = "1px solid #46b8da";		
 		}
 	}
 
@@ -65,6 +72,7 @@ function setColorRating(btn,val) {
 			var temp = "RatingLevel" + i;
 			document.getElementById(temp).style.backgroundColor = "transparent";
 			document.getElementById(temp).style.color = "#5bc0de";
+			document.getElementById(temp).style.border = "1px solid #46b8da";		
 			lastClickRating = -1;
 		}
 		return;
@@ -78,12 +86,14 @@ function setColorRating(btn,val) {
 			var temp = 'RatingLevel' + i;
 			document.getElementById(temp).style.backgroundColor = "#5bc0de";
 			document.getElementById(temp).style.color = "#FFFFFF";
+			document.getElementById(temp).style.border = "3px solid #0568e1";
 		}
 		for(var i = val+1; i<=5;i++)
 		{
 			var temp = "RatingLevel" + i;
 			document.getElementById(temp).style.backgroundColor = "#tansparent";
 			document.getElementById(temp).style.color = "#5bc0de";
+			document.getElementById(temp).style.border = "1px solid #46b8da";		
 		}
 	}
 
