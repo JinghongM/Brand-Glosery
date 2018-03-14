@@ -7,18 +7,12 @@
 	<link href='https://fonts.googleapis.com/css?family=Alfa Slab One' rel='stylesheet'>
 	<link href='https://fonts.googleapis.com/css?family=Autour One' rel='stylesheet'>
 	<link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,300italic' rel='stylesheet' type='text/css'>
-
-	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-
-	<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-	<script src="D:/EW/website template/resources/js/multiselect.js"></script>
-
-
-
-	<script type="text/javascript" src="./resources/js/searchFunction.js"></script>
+	
+	
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="./resources/css/page.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script> 
 
 	<link rel="stylesheet" type="text/css" href="vendors/css/normalize.css">
 	<link rel="stylesheet" type="text/css" href="vendors/css/grid.css">
@@ -26,14 +20,13 @@
 	<link rel="stylesheet" type="text/css" href="vendors/css/animate.css">
 	<link rel="stylesheet" type="text/css" href="resources/css/style.css">
 	<link rel="stylesheet" type="text/css" href="resources/css/queries.css">
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+	<link href="./resources/css/jquery.multiselect.css" rel="stylesheet" type="text/css">
 
 	<title>Everlasting Wardrobe</title>
 	<meta name="msapplication-TileColor" content="#da532c">
 
 	<meta name="theme-color" content="#ffffff">
-
-	<script src="vendors/js/jquery.waypoints.min.js"></script>
-	<script src="resources/js/script.js"></script>
 </head>
 <body>
 	<header>
@@ -83,7 +76,7 @@
 				<input type="hidden" name="Lullaby" id="Lullaby" value="0">
 				<input type="hidden" name="Jock Jams" id="Jock Jams" value="0">
 
-				<div class="container searchFont"  align="center">
+				<div class="container searchFont" align="center" style="height: all;">
 					<div class=border>
 						<button type="button" class="btn btn-info" id="searchBy">Search By</button>
 
@@ -114,7 +107,7 @@
 
 						</div>
 					</div>
-					<button type="button" class="btn btn-info" id="AdvancedSearchButton" style="float:left;margin-top: 15px;" onclick="showAdvancedSearch();">Advanced Option</button>
+					<button type="button" class="btn btn-info" id="AdvancedSearchButton" onclick="showAdvancedSearch();">Advanced Option</button>
 					<script type="text/javascript">
 						function showAdvancedSearch()
 						{
@@ -136,23 +129,40 @@
 				<div class="container searchFont" align="center" id="advancedSearch" style="float:center; display: none; overflow: initial; background-color:#EDEDED;">
 					<br>
 					<label>Genres</label>
-					<select id="multiple-checkboxes" multiple="dropdown-menu">
-						<option value="Jazz" style="margin:0;">Jazz</option>
-						<option value="Pop" style="margin:0;">Pop</option>
+					<!-- <select id="multiple-checkboxes" multiple="dropdown-menu">
+						<option value="Jazz" id="Jazz" style="margin:0;" onclick="multiselect('Jazz')">Jazz</option>
+						<option value="Pop" id="Pop" style="margin:0;" onclick="multiselect('Pop')" >Pop</option>
 						<option value="Techno" style="margin:0;">Techno</option>
 						<option value="Indie" style="margin:0;">Indie</option>
 						<option value="HipHop" style="margin:0;">Hip Hop</option>
 						<option value="Lullaby" style="margin:0;">Lullaby</option>						        
 						<option value="JockJams" style="margin:0;">Jock Jams</option>
+					</select> -->
+
+					<select name="multicheckbox[]" multiple="multiple" class="4colactive">
+						<option value="Jazz">Jazz</option>
+						<option value="Pop">Pop</option>
+						<option value="Techno">Techno</option>
+						<option value="Indie">Indie</option>
+						<option value="HipHop">Hip Hop</option>
+						<option value="Lullaby">Lullaby</option>						        
+						<option value="JockJams">Jock Jams</option>
 					</select>
-					<style type="text/css">
+					<script src="./resources/js/jquery.multiselect.js"></script>
+					<script>
+						$('select[multiple]').multiselect({
+							columns: 2,
+							placeholder: 'Select options'
+						});
+					</script>
+<!-- 					<style type="text/css">
 					.dropdown-menu {
 						width: 60%;
 						max-height: 300px;
 						overflow-y: auto;
 						overflow-x: hidden;
 					}
-				</style>
+				</style> -->
 				<p style="size: 10px;opacity: 0.5">Choose One or More</p>
 				<script type="text/javascript">
 					$(document).ready(function() {
@@ -194,11 +204,35 @@
 
 	<section class="section-meals">
 		<div class="row">
-			<h2 id="browseSuggestedCollections">BROWSE SUGGESTED COLLECTIONS</h2>
+			<h1 id="browseSuggestedCollections">BROWSE SUGGESTED COLLECTIONS</h1>
 		</div>
-		<div class="imgContainer" style="background-color: #EAE7DC">
+
+		<div class="imgContainer" style="background-color: #EAE7DC; display: block;">
 			<div class="row" id="subtitles">ECO-FRIENDLY</div>
-			<ul class="meals-showcase clearfix">
+			<div class="carousel slide" id="mobileECO" data-ride="false">
+				<div class="carousel-inner" >
+					<div class="carousel-item active">
+						<img src="./resources/img/brand_ex0.jpg">
+					</div>
+					<div class="carousel-item">
+						<img src="./resources/img/brand_ex1.png">
+					</div>
+					<div class="carousel-item">
+						<img src="./resources/img/brand_ex2.png">
+					</div>
+					<div class="carousel-item">
+						<img src="./resources/img/brand_ex3.gif">
+					</div>
+
+				</div>
+				<a class="carousel-control-prev" href="#mobileECO" data-slide="prev">
+					<i class="fa fa-arrow-circle-left fa-4x" style="color: #5bc0de"></i>
+				</a>
+				<a class="carousel-control-next" href="#mobileECO" data-slide="next">
+					<i class="fa fa-arrow-circle-right fa-4x" style="color: #5bc0de"></i>
+				</a>
+			</div>
+			<ul class="meals-showcase clearfix" id="PCECO">
 				<li>
 					<figure class="meal-photo">
 						<img src="./resources/img/brand_ex0.jpg" alt="Korean bibimbap with egg and vegetables">
@@ -223,7 +257,26 @@
 		</div>
 		<div class="imgContainer">
 			<div class="row" id="subtitles">MADE IN THE USA</div>
-			<ul class="meals-showcase clearfix">
+			<div class="carousel slide" id="mobileUSA" data-ride="false">
+				<div class="carousel-inner" >
+					<div class="carousel-item active">
+						<img src="./resources/img/brand_ex0.jpg">
+					</div>
+					<div class="carousel-item">
+						<img src="./resources/img/brand_ex1.png">
+					</div>
+					<div class="carousel-item">
+						<img src="./resources/img/brand_ex1.png">
+					</div>
+				</div>
+				<a class="carousel-control-prev" href="#mobileUSA" data-slide="prev">
+					<i class="fa fa-arrow-circle-left fa-4x" style="color: #5bc0de"></i>
+				</a>
+				<a class="carousel-control-next" href="#mobileUSA" data-slide="next">
+					<i class="fa fa-arrow-circle-right fa-4x" style="color: #5bc0de"></i>
+				</a>
+			</div>
+			<ul class="meals-showcase clearfix" id="PCUSA">
 				<li>
 					<figure class="meal-photo">
 						<img src="./resources/img/brand_ex4.png" alt="Korean bibimbap with egg and vegetables">
@@ -248,7 +301,26 @@
 		</div>
 		<div class="imgContainer" style="background-color: #EAE7DC">
 			<div class="row" id="subtitles">MOST POPULAR</div>
-			<ul class="meals-showcase clearfix">
+			<div class="carousel slide" data-ride="false" id="mobilePOP">
+				<div class="carousel-inner" >
+					<div class="carousel-item active">
+						<img src="./resources/img/brand_ex0.jpg">
+					</div>
+					<div class="carousel-item">
+						<img src="./resources/img/brand_ex1.png">
+					</div>
+					<div class="carousel-item">
+						<img src="./resources/img/brand_ex1.png">
+					</div>
+				</div>
+				<a class="carousel-control-prev" href="#mobilePOP" data-slide="prev">
+					<i class="fa fa-arrow-circle-left fa-4x" style="color: #5bc0de"></i>
+				</a>
+				<a class="carousel-control-next" href="#mobilePOP" data-slide="next">
+					<i class="fa fa-arrow-circle-right fa-4x" style="color: #5bc0de"></i>
+				</a>
+			</div>
+			<ul class="meals-showcase clearfix" id="PCPOP">
 				<li>
 					<figure class="meal-photo">
 						<img src="./resources/img/brand_ex8.jpg" alt="Korean bibimbap with egg and vegetables">
@@ -272,27 +344,41 @@
 			</ul>
 		</div>
 	</section>
+	<script type="text/javascript">
+		if($(this).width()<480)
+		{
+			document.getElementById("mobileECO").style.display = "block";
+			document.getElementById("PCECO").style.display = "none";
+			document.getElementById("mobilePOP").style.display = "block";
+			document.getElementById("PCPOP").style.display = "none";			
+			document.getElementById("mobileUSA").style.display = "block";
+			document.getElementById("PCUSA").style.display = "none";
+		}
+		
+		else
+		{	
+			document.getElementById("mobileECO").style.display = "none";
+			document.getElementById("PCECO").style.display = "block";
+			document.getElementById("mobilePOP").style.display = "none";
+			document.getElementById("PCPOP").style.display = "block";			
+			document.getElementById("mobileUSA").style.display = "none";
+			document.getElementById("PCUSA").style.display = "block";
+		}
 
+	</script>
 
 	<section>
 		<div id="video_box">
 			<div id="video-background-filter"></div>
-			<div id="content-overlays">
-				<div class="second-text-box">
-					<h4 class="CHILDFASHION" id="MORESHOPPINGTOOLS">FOR MORE SHOPPING TOOLS</h4>
-					<h1 class="OUTWITHTHEOLD">CHECK OUT<br>THE SIZE CONVERTER</h1>
-
-					<div class="SIZEBUTTON">
-						<button type="button" class="Start-button" id="Size-button" style="margin: auto;">
-							<a href="#searchBar">
-								SIZE CONVERTOR
-							</a>
-						</button>
-					</div>
-				</div>	
-
-			</div>
-
+			<div class="second-text-box">
+				<h4 class="CHILDFASHION" id="MORESHOPPINGTOOLS">FOR MORE SHOPPING TOOLS</h4>
+				<h1 class="OUTWITHTHEOLD">CHECK OUT<br>THE SIZE CONVERTER</h1>
+				<button type="button" class="Start-button" id="Size-button">
+					<a href="#searchBar">
+						SIZE CONVERTOR
+					</a>
+				</button>
+			</div>	
 		</div>
 		<div id="myVideoContainer">
 			<div id="overlay"></div>
@@ -334,4 +420,11 @@
 
 </body>  
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+
+
+
+<script type="text/javascript" src="./resources/js/searchFunction.js"></script>
 </html>
